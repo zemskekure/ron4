@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build:*)",
+      "Bash(npm run dev:*)",
+      "Bash(curl:*)",
+      "Bash(lsof:*)",
+      "Bash(ps:*)",
+      "Bash(pwdx:*)",
+      "Bash(node -e \"process.stdin.on\\(''data'', d => { const j = JSON.parse\\(d\\); console.log\\(''OK, keys:'', Object.keys\\(j\\)\\) }\\)\")"
+    ]
+  }
+}

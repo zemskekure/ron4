@@ -1,0 +1,34 @@
+{
+  "cs": {
+    "subtitle": "v Čestru",
+    "date": "Čtvrtek 26. 3.",
+    "reservation": "Rezervace od 17:00",
+    "dinners": "150 večeří",
+    "description": "Vícechodové menu z české sezóny očima kanadského šéfkuchaře.",
+    "tags": "Jehněčí z Rudimova  ·  Spřátelení farmáři  ·  Poctivé řemeslo",
+    "cta": "Rezervovat večeři",
+    "ctaSub": "Rezervace se otevřou v 17:00",
+    "about": "O Ronovi",
+    "city": "Praha, 2026",
+    "aboutTitle": "Ron McKinlay",
+    "aboutText": "Ron McKinlay (Vancouver). 10+ let zkušeností z UK, Austrálie a Blízkého východu. Precizní technika, respekt k surovinám, plná chuť. V Praze vaří výjimečné menu postavené na lokální sezóně.",
+    "aboutQuote": "\u201e...dok\u00e1\u017eu uk\u00e1zat p\u0159irozen\u00e9 bohatstv\u00ed zem\u011b, kterou naz\u00fdv\u00e1m domovem.\u201c",
+    "ctaUrl": "#rezervace"
+  },
+  "en": {
+    "subtitle": "in Čestr",
+    "date": "Thursday, Mar 26",
+    "reservation": "Reservations from 17:00",
+    "dinners": "150 dinners",
+    "description": "A multi-course menu from the Czech season through the eyes of a Canadian chef.",
+    "tags": "Lamb from Rudimov  ·  Partner farmers  ·  Honest craft",
+    "cta": "Reserve a dinner",
+    "ctaSub": "Reservations open at 17:00",
+    "about": "About Ron",
+    "city": "Prague, 2026",
+    "aboutTitle": "Ron McKinlay",
+    "aboutText": "Ron McKinlay (Vancouver). 10+ years of experience across the UK, Australia and the Middle East. Precise technique, respect for ingredients, full flavour. In Prague he cooks an exceptional menu built on local season.",
+    "aboutQuote": "\u201C...I can showcase the natural richness of the land I now call home.\u201D",
+    "ctaUrl": "#rezervace"
+  }
+}
