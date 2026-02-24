@@ -13,22 +13,20 @@ const defaults = {
     about: "O Ronovi",
     aboutTitle: "Ron McKinlay",
     aboutText:
-      "Rodák z Vancouveru našel svou vášeň pro vaření už v dětství – za nedělních rodinných obědů (sunday roast), které s láskou připravovala jeho maminka. Více než deset let sbíral zkušenosti v prestižních kuchyních ve Velké Británii, Austrálii a na Blízkém východě. V Edinburghu se učil pod michelinským šéfkuchařem Tomem Kitchinem, v Melbourne pak piloval své řemeslo po boku Scotta Picketta. V Kanadě několik let pracoval jako executive chef v podniku Canoe, kde naplno ukázal schopnost povýšit bohatství kanadské přírody, díky preciznímu propojení klasických francouzských technik a současného kulinárního myšlení.",
+      "Rodák z Vancouveru našel svou vášeň pro vaření už v dětství – za nedělních rodinných obědů (sunday roast), které s láskou připravovala jeho maminka. Více než deset let sbíral zkušenosti v zahraničí – v Edinburghu se učil pod michelinským šéfkuchařem Tomem Kitchinem, v Melbourne pak piloval své řemeslo po boku Scotta Picketta. V Kanadě několik let pracoval jako executive chef v podniku Canoe.",
     aboutText2:
       "Ron je známý svou disciplinovaností a hlubokým respektem k lokálním surovinám. V současné době buduje vlastní koncept, školí profesionály a poskytuje konzultace restauracím i značkám.",
     aboutQuote:
-      "\u201EFrancouzskou kuchyni jsme doma nejedli, ale jedli jsme čerstvé suroviny. Moje maminka na zahradě pěstovala, a pořád pěstuje, vlastní produkty, takže na stole bylo vždycky něco sezónního. Právě tenhle základ poctivého, dobře připraveného jídla mě pravděpodobně formoval úplně stejně silně jako jakékoli klasické kulinární vzdělání.\u201C",
+      "\u201EMoje maminka měla a má zahradu, takže na stole bylo vždycky něco sezónního. Právě tenhle základ poctivého, dobře připraveného jídla mě pravděpodobně formoval úplně stejně silně jako jakékoli klasické kulinární vzdělání.\u201C",
     menuTitle: "Co vás čeká",
     menuText:
-      "Kanadský šéfkuchař Ron McKinlay v restauraci Čestr uvaří několikachodové menu odrážející jeho pohled na českou sezónu. Prim budou hrát suroviny od místních farmářů, především pak jehněčí, a Ronovy zkušenosti a recepty. V jeho vizi ho podpoří tým kuchařů z Ambiente.",
+      "Kanadský šéfkuchař Ron McKinlay připraví v restauraci Čestr několikachodové menu inspirované českou sezónou. Hlavní roli sehrají suroviny od místních farmářů, především jehněčí, a Ronovy zkušenosti a recepty. V jeho vizi ho podpoří tým kuchařů z Ambiente.",
     menuText2:
-      "Ron miluje obyčejné suroviny a díky preciznímu technickému přístupu z nich dokáže připravit výjimečný zážitek. Žádné zkratky. Poctivé řemeslo. Plná chuť.",
+      "Ron miluje obyčejné suroviny a díky preciznímu technickému přístupu z nich vytváří výjimečný zážitek. Žádné zkratky. Poctivé řemeslo. Plná chuť. Během večeře bude navíc prostor dozvědět se o menu víc přímo od něj.",
     menuText3:
-      "Během večeře však bude Ron věnovat pozornost především vám – hostům. A tak bude prostor se o menu dozvědět více přímo od něj. Přijďte se podívat, jak vypadá a chutná kanadská kultura v kombinaci s tou českou.",
-    menuText4:
-      "Pop-up se koná v restauraci Čestr, která klade důraz na poctivé lokální a sezónní suroviny od spřátelených farmářů a právě maso z české produkce je místní specialitou. Díky otevřené kuchyni a prosklené bourárně budete mít dění doslova na dohled.",
+      "Pop-up se koná v restauraci Čestr, která stojí na poctivých lokálních a sezónních surovinách a specializuje se na maso z české produkce. Díky otevřené kuchyni a prosklené bourárně budete mít celé dění na dohled. Přijďte se podívat, jak vypadá a chutná kanadská kultura v kombinaci s tou českou.",
     infoTitle: "Praktické informace",
-    infoDate: "26. března 2026",
+    infoDate: "26. března 2026, 17:00\u201321:00",
     infoPlace: "Restaurace Čestr, Praha",
     infoDiet:
       "Vzhledem k charakteru večeře a pevně stanovenému menu není možné připravit vegetariánskou ani veganskou variantu. V případě dietních omezení či alergií nás prosím kontaktujte před vytvořením rezervace, abychom mohli ověřit dostupné možnosti.",
@@ -45,22 +43,20 @@ const defaults = {
     about: "About Ron",
     aboutTitle: "Ron McKinlay",
     aboutText:
-      "A native of Vancouver, Ron discovered his passion for cooking as a child — during the Sunday roasts lovingly prepared by his mother. Over more than a decade, he honed his skills in prestigious kitchens across the UK, Australia, and the Middle East. In Edinburgh, he trained under Michelin-starred chef Tom Kitchin; in Melbourne, he refined his craft alongside Scott Pickett. In Canada, he spent several years as executive chef at Canoe, where he fully demonstrated his ability to elevate the richness of Canadian nature through a precise fusion of classical French techniques and contemporary culinary thinking.",
+      "A native of Vancouver, Ron discovered his passion for cooking as a child \u2014 during the Sunday roasts lovingly prepared by his mother. Over more than a decade, he honed his skills abroad \u2014 in Edinburgh under Michelin-starred chef Tom Kitchin, and in Melbourne alongside Scott Pickett. In Canada, he spent several years as executive chef at Canoe.",
     aboutText2:
       "Ron is known for his discipline and deep respect for local ingredients. He is currently building his own concept, training professionals, and consulting for restaurants and brands.",
     aboutQuote:
-      "\u201CWe did not grow up around French food, but we grew up around fresh food. My mum had a garden in the backyard and still does. There was always something seasonal on the table. That foundation of honest, well cooked food probably shaped me just as much as any classical training did.\u201D",
+      "\u201CMy mum had a garden in the backyard and still does. There was always something seasonal on the table. That foundation of honest, well cooked food probably shaped me just as much as any classical training did.\u201D",
     menuTitle: "What to expect",
     menuText:
-      "Canadian chef Ron McKinlay will prepare a multi-course menu at Čestr restaurant, reflecting his perspective on the Czech season. The starring roles go to ingredients from local farmers — especially lamb — and Ron\u2019s experience and recipes. He will be supported by the Ambiente kitchen team.",
+      "Canadian chef Ron McKinlay will prepare a multi-course menu at Čestr restaurant, inspired by the Czech season. Local farmers\u2019 ingredients \u2014 especially lamb \u2014 will take center stage, alongside Ron\u2019s experience and recipes. He will be supported by the Ambiente kitchen team.",
     menuText2:
-      "Ron loves simple ingredients and, through a precise technical approach, transforms them into an exceptional experience. No shortcuts. Honest craft. Full flavor.",
+      "Ron loves simple ingredients and, through a precise technical approach, transforms them into an exceptional experience. No shortcuts. Honest craft. Full flavor. During the dinner, there will also be space to learn more about the menu directly from him.",
     menuText3:
-      "During the dinner, Ron will devote his attention above all to you — the guests. There will be space to learn more about the menu directly from him. Come see what Canadian culture looks and tastes like when combined with Czech tradition.",
-    menuText4:
-      "The pop-up takes place at Čestr restaurant, which emphasizes honest, local, and seasonal ingredients from partner farmers — Czech-raised meat is the house specialty. Thanks to the open kitchen and glass-walled butchery, you\u2019ll have a front-row seat to the action.",
+      "The pop-up takes place at Čestr restaurant, which is built on honest, local, and seasonal ingredients and specializes in Czech-raised meat. Thanks to the open kitchen and glass-walled butchery, you\u2019ll have the action in full view. Come see what Canadian culture looks and tastes like when combined with Czech tradition.",
     infoTitle: "Practical information",
-    infoDate: "March 26, 2026",
+    infoDate: "March 26, 2026, 5:00\u20139:00 PM",
     infoPlace: "Čestr Restaurant, Prague",
     infoDiet:
       "Due to the nature of the dinner and a fixed menu, we are unable to prepare a vegetarian or vegan option. If you have dietary restrictions or allergies, please contact us before making a reservation so we can verify available options.",
@@ -118,13 +114,13 @@ export function Hero({ content }: { content?: SiteContent | null }) {
           </div>
         </div>
 
-        {/* Ingredients — below the headline, around the portrait */}
+        {/* Ingredients — around the portrait */}
         <div className="pointer-events-none absolute inset-0 z-30" aria-hidden="true">
-          {/* Onion — right, portrait level */}
+          {/* Onion — right */}
           <div className="pointer-events-auto absolute top-[30%] right-[8%] md:right-[-2%] lg:right-[8%] animate-drift-slow animate-fade-in-delay-2 cursor-pointer" style={{ animationDelay: "1s" }} onClick={() => handleImageClick("onion")}>
             <Image src="/images/new/cibule.png" alt="" width={600} height={500} className={`w-32 md:w-40 lg:w-48 h-auto mix-blend-screen ${spinning === "onion" ? "animate-spin-once" : ""}`} />
           </div>
-          {/* Parsley — left, portrait level */}
+          {/* Parsley — left, upper */}
           <div className="pointer-events-auto absolute top-[28%] left-[8%] md:left-[8%] lg:left-[14%] animate-drift animate-fade-in-delay-3 cursor-pointer" style={{ animationDelay: "2s" }} onClick={() => handleImageClick("parsley")}>
             <Image src="/images/new/petrzel.png" alt="" width={400} height={200} className={`w-24 md:w-28 lg:w-36 h-auto mix-blend-multiply ${spinning === "parsley" ? "animate-spin-once" : ""}`} />
           </div>
@@ -144,13 +140,9 @@ export function Hero({ content }: { content?: SiteContent | null }) {
           <div className="pointer-events-auto absolute bottom-[14%] right-[8%] md:right-[6%] lg:right-[14%] animate-drift-slow animate-fade-in-delay-4 cursor-pointer" onClick={() => handleImageClick("topinambur")}>
             <Image src="/images/new/topinambur.png" alt="" width={300} height={200} className={`w-20 md:w-24 lg:w-28 h-auto mix-blend-multiply ${spinning === "topinambur" ? "animate-spin-once" : ""}`} />
           </div>
-          {/* Celery — top left, near clouds */}
+          {/* Celery — top left */}
           <div className="pointer-events-auto absolute top-[18%] left-[3%] md:left-[4%] lg:left-[8%] animate-drift animate-fade-in-delay-3 cursor-pointer" style={{ animationDelay: "5s" }} onClick={() => handleImageClick("celer")}>
             <Image src="/images/new/celer.png" alt="" width={500} height={500} className={`w-24 md:w-28 lg:w-36 h-auto mix-blend-screen ${spinning === "celer" ? "animate-spin-once" : ""}`} />
-          </div>
-          {/* Parsley root — bottom center-right */}
-          <div className="pointer-events-auto absolute bottom-[8%] right-[25%] md:right-[28%] lg:right-[30%] animate-drift-slow animate-fade-in-delay-3 cursor-pointer" style={{ animationDelay: "6s" }} onClick={() => handleImageClick("petrzel")}>
-            <Image src="/images/new/petrzel.png" alt="" width={400} height={200} className={`w-20 md:w-24 lg:w-28 h-auto mix-blend-multiply ${spinning === "petrzel" ? "animate-spin-once" : ""}`} />
           </div>
         </div>
 
@@ -218,6 +210,11 @@ export function Hero({ content }: { content?: SiteContent | null }) {
             <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-[#1e3a6e] tracking-tight">
               {s.aboutTitle}
             </h2>
+            <blockquote className="mt-6 md:mt-8 pl-5 md:pl-6 border-l-3 border-accent/50">
+              <p className="text-accent italic text-[17px] md:text-[21px] lg:text-[24px] leading-[1.6] font-serif">
+                {s.aboutQuote}
+              </p>
+            </blockquote>
             <div className="mt-6 md:mt-8 flex flex-col gap-4">
               <p className="text-[13px] md:text-[15px] leading-[1.9] text-foreground/60 font-sans">
                 {s.aboutText}
@@ -225,11 +222,6 @@ export function Hero({ content }: { content?: SiteContent | null }) {
               <p className="text-[13px] md:text-[15px] leading-[1.9] text-foreground/60 font-sans">
                 {s.aboutText2}
               </p>
-              <blockquote className="mt-4 pl-4 border-l-2 border-accent/40">
-                <p className="text-accent italic text-[13px] md:text-[15px] leading-[1.8] font-serif">
-                  {s.aboutQuote}
-                </p>
-              </blockquote>
             </div>
           </div>
 
@@ -257,7 +249,6 @@ export function Hero({ content }: { content?: SiteContent | null }) {
             <p>{s.menuText}</p>
             <p className="text-[#f3efe6] font-medium">{s.menuText2}</p>
             <p>{s.menuText3}</p>
-            <p>{s.menuText4}</p>
           </div>
         </div>
       </section>
@@ -296,6 +287,15 @@ export function Hero({ content }: { content?: SiteContent | null }) {
           <p className="mt-6 text-[12px] md:text-[13px] leading-[1.8] text-foreground/35 font-sans italic text-center">
             {s.contextText}
           </p>
+
+          <div className="mt-10 md:mt-14 flex justify-center">
+            <a
+              href={s.ctaUrl ?? "#rezervace"}
+              className="px-10 py-3.5 bg-[#1e3a6e] text-background border border-[#1e3a6e] hover:bg-transparent hover:text-[#1e3a6e] transition-colors duration-300 font-sans text-[11px] md:text-[12px] tracking-[0.15em] uppercase"
+            >
+              {s.cta}
+            </a>
+          </div>
         </div>
       </section>
 
