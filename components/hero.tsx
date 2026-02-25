@@ -1,7 +1,103 @@
 "use client"
 
 import Image from "next/image"
-import { useState, useRef, useCallback } from "react"
+import { useState, useRef, useCallback, useEffect } from "react"
+
+function useResourceDebug() {
+  useEffect(() => {
+    const pageStart = performance.now()
+    console.log(
+      "%c[perf] Page component mounted at " + Math.round(pageStart) + "ms",
+      "color: #1e3a6e; font-weight: bold"
+    )
+
+    // Log resources already loaded before this effect ran
+    const existing = performance.getEntriesByType("resource") as PerformanceResourceTiming[]
+    if (existing.length) {
+      console.groupCollapsed(`[perf] ${existing.length} resources already loaded`)
+      const sorted = [...existing].sort((a, b) => b.duration - a.duration)
+      for (const r of sorted) {
+        const sizeKB = r.transferSize ? (r.transferSize / 1024).toFixed(1) + " KB" : "cached/opaque"
+        const name = r.name.split("/").slice(-2).join("/")
+        console.log(
+          `${Math.round(r.duration)}ms | ${sizeKB} | ${name}`
+        )
+      }
+      console.groupEnd()
+    }
+
+    // Watch for new resources as they load
+    const observer = new PerformanceObserver((list) => {
+      for (const entry of list.getEntries()) {
+        const r = entry as PerformanceResourceTiming
+        const sizeKB = r.transferSize ? (r.transferSize / 1024).toFixed(1) + " KB" : "cached/opaque"
+        const name = r.name.split("/").slice(-2).join("/")
+        const isLarge = r.transferSize > 500_000
+        const isSlow = r.duration > 1000
+        const style = isLarge || isSlow
+          ? "color: red; font-weight: bold"
+          : "color: gray"
+        console.log(
+          `%c[perf] loaded: ${Math.round(r.duration)}ms | ${sizeKB} | ${name}` +
+            (isSlow ? " ⚠️ SLOW" : "") +
+            (isLarge ? " 🐘 LARGE" : ""),
+          style
+        )
+      }
+    })
+    observer.observe({ type: "resource", buffered: false })
+
+    // Log image-specific timing via load events
+    const images = document.querySelectorAll("img")
+    const imgTimers: { el: HTMLImageElement; handler: () => void }[] = []
+    images.forEach((img) => {
+      if (img.complete) {
+        console.log(`[perf] img already complete: ${img.src.split("/").pop()}`)
+      } else {
+        const start = performance.now()
+        const handler = () => {
+          const elapsed = Math.round(performance.now() - start)
+          const w = img.naturalWidth
+          const h = img.naturalHeight
+          console.log(
+            `[perf] img onload: ${elapsed}ms | ${w}x${h} | ${img.src.split("/").pop()}`
+          )
+        }
+        img.addEventListener("load", handler)
+        imgTimers.push({ el: img, handler })
+      }
+    })
+
+    // Summary after everything settles
+    const summaryTimer = setTimeout(() => {
+      const resources = performance.getEntriesByType("resource") as PerformanceResourceTiming[]
+      const images = resources.filter((r) => /\.(png|jpe?g|webp|gif|svg|avif)(\?|$)/i.test(r.name))
+      const videos = resources.filter((r) => /\.(mp4|mov|webm)(\?|$)/i.test(r.name))
+      const totalImgKB = images.reduce((sum, r) => sum + (r.transferSize || 0), 0) / 1024
+      const totalVidKB = videos.reduce((sum, r) => sum + (r.transferSize || 0), 0) / 1024
+      const slowest = [...resources].sort((a, b) => b.duration - a.duration).slice(0, 5)
+
+      console.log(
+        "%c[perf] ═══ SUMMARY ═══",
+        "color: #1e3a6e; font-weight: bold; font-size: 14px"
+      )
+      console.log(`  Images: ${images.length} files, ${(totalImgKB / 1024).toFixed(1)} MB transferred`)
+      console.log(`  Videos: ${videos.length} files, ${(totalVidKB / 1024).toFixed(1)} MB transferred`)
+      console.log(`  Total resources: ${resources.length}`)
+      console.log(`  Top 5 slowest:`)
+      for (const r of slowest) {
+        const sizeKB = r.transferSize ? (r.transferSize / 1024).toFixed(1) + " KB" : "cached"
+        console.log(`    ${Math.round(r.duration)}ms | ${sizeKB} | ${r.name.split("/").pop()}`)
+      }
+    }, 5000)
+
+    return () => {
+      observer.disconnect()
+      clearTimeout(summaryTimer)
+      imgTimers.forEach(({ el, handler }) => el.removeEventListener("load", handler))
+    }
+  }, [])
+}
 
 const defaults = {
   cs: {
@@ -85,6 +181,7 @@ export function Hero({ content }: { content?: SiteContent | null }) {
   const s = t[lang]
   const { spinning, spin } = useSpinOnClick()
   const sheepAudio = useRef<HTMLAudioElement | null>(null)
+  useResourceDebug()
 
   const handleImageClick = (id: string, isSheep?: boolean) => {
     spin(id)
