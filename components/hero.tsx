@@ -201,13 +201,13 @@ export function Hero({ content }: { content?: SiteContent | null }) {
         {/* Clouds — around the typography at the top */}
         <div className="pointer-events-none absolute inset-0" aria-hidden="true">
           <div className="absolute top-[2%] right-[5%] md:right-[15%] animate-cloud-float opacity-30">
-            <Image src="/images/new/CES_ron_mckinlay_pcs_08.png" alt="" width={600} height={250} className="w-36 md:w-48 lg:w-64 h-auto" />
+            <Image src="/images/new/CES_ron_mckinlay_pcs_08.webp" alt="" width={512} height={235} className="w-36 md:w-48 lg:w-64 h-auto" />
           </div>
           <div className="absolute top-[8%] left-[-3%] md:left-[6%] animate-cloud-float opacity-25" style={{ animationDelay: "8s" }}>
-            <Image src="/images/new/CES_ron_mckinlay_pcs_08.png" alt="" width={600} height={250} className="w-28 md:w-40 lg:w-52 h-auto scale-x-[-1]" />
+            <Image src="/images/new/CES_ron_mckinlay_pcs_08.webp" alt="" width={512} height={235} className="w-28 md:w-40 lg:w-52 h-auto scale-x-[-1]" />
           </div>
           <div className="absolute top-[5%] left-[30%] md:left-[38%] animate-cloud-float opacity-15" style={{ animationDelay: "4s" }}>
-            <Image src="/images/new/CES_ron_mckinlay_pcs_08.png" alt="" width={600} height={250} className="w-24 md:w-36 lg:w-44 h-auto" />
+            <Image src="/images/new/CES_ron_mckinlay_pcs_08.webp" alt="" width={512} height={235} className="w-24 md:w-36 lg:w-44 h-auto" />
           </div>
         </div>
 
@@ -215,31 +215,31 @@ export function Hero({ content }: { content?: SiteContent | null }) {
         <div className="pointer-events-none absolute inset-0 z-30" aria-hidden="true">
           {/* Onion — right */}
           <div className="pointer-events-auto absolute top-[30%] right-[8%] md:right-[-2%] lg:right-[8%] animate-drift-slow animate-fade-in-delay-2 cursor-pointer" style={{ animationDelay: "1s" }} onClick={() => handleImageClick("onion")}>
-            <Image src="/images/new/cibule.png" alt="" width={600} height={500} className={`w-32 md:w-40 lg:w-48 h-auto mix-blend-screen ${spinning === "onion" ? "animate-spin-once" : ""}`} />
+            <Image src="/images/new/cibule.webp" alt="" width={384} height={268} className={`w-32 md:w-40 lg:w-48 h-auto mix-blend-screen ${spinning === "onion" ? "animate-spin-once" : ""}`} />
           </div>
           {/* Parsley — left, upper */}
           <div className="pointer-events-auto absolute top-[28%] left-[8%] md:left-[8%] lg:left-[14%] animate-drift animate-fade-in-delay-3 cursor-pointer" style={{ animationDelay: "2s" }} onClick={() => handleImageClick("parsley")}>
-            <Image src="/images/new/petrzel.png" alt="" width={400} height={200} className={`w-24 md:w-28 lg:w-36 h-auto mix-blend-multiply ${spinning === "parsley" ? "animate-spin-once" : ""}`} />
+            <Image src="/images/new/petrzel.webp" alt="" width={288} height={232} className={`w-24 md:w-28 lg:w-36 h-auto mix-blend-multiply ${spinning === "parsley" ? "animate-spin-once" : ""}`} />
           </div>
           {/* Fish — left, lower */}
           <div className="pointer-events-auto absolute top-[48%] left-[2%] md:left-[2%] lg:left-[10%] animate-drift-slow animate-fade-in-delay-4 cursor-pointer" style={{ animationDelay: "4s" }} onClick={() => handleImageClick("fish")}>
-            <Image src="/images/new/ryba.png" alt="" width={600} height={600} className={`w-36 md:w-48 lg:w-56 h-auto mix-blend-screen ${spinning === "fish" ? "animate-spin-once" : ""}`} />
+            <Image src="/images/new/ryba.webp" alt="" width={448} height={243} className={`w-36 md:w-48 lg:w-56 h-auto mix-blend-screen ${spinning === "fish" ? "animate-spin-once" : ""}`} />
           </div>
           {/* Knife — right, mid-lower */}
           <div className="pointer-events-auto absolute top-[42%] right-[5%] md:right-[4%] lg:right-[12%] animate-drift animate-fade-in-delay-3 cursor-pointer" style={{ animationDelay: "3s" }} onClick={() => handleImageClick("knife")}>
-            <Image src="/images/new/kejta.png" alt="" width={300} height={500} className={`w-24 md:w-28 lg:w-36 h-auto mix-blend-multiply ${spinning === "knife" ? "animate-spin-once" : ""}`} />
+            <Image src="/images/new/kejta.webp" alt="" width={288} height={769} className={`w-24 md:w-28 lg:w-36 h-auto mix-blend-multiply ${spinning === "knife" ? "animate-spin-once" : ""}`} />
           </div>
           {/* Lamb — lower left */}
           <div className="pointer-events-auto absolute bottom-[12%] left-[5%] md:left-[6%] lg:left-[14%] animate-drift animate-fade-in-delay-4 cursor-pointer" onClick={() => handleImageClick("lamb", true)}>
-            <Image src="/images/new/jehnecihrebinek.png" alt="" width={600} height={600} className={`w-28 md:w-32 lg:w-40 h-auto mix-blend-screen ${spinning === "lamb" ? "animate-spin-once" : ""}`} />
+            <Image src="/images/new/jehnecihrebinek.webp" alt="" width={320} height={388} className={`w-28 md:w-32 lg:w-40 h-auto mix-blend-screen ${spinning === "lamb" ? "animate-spin-once" : ""}`} />
           </div>
           {/* Topinambur — lower right */}
           <div className="pointer-events-auto absolute bottom-[14%] right-[8%] md:right-[6%] lg:right-[14%] animate-drift-slow animate-fade-in-delay-4 cursor-pointer" onClick={() => handleImageClick("topinambur")}>
-            <Image src="/images/new/topinambur.png" alt="" width={300} height={200} className={`w-20 md:w-24 lg:w-28 h-auto mix-blend-multiply ${spinning === "topinambur" ? "animate-spin-once" : ""}`} />
+            <Image src="/images/new/topinambur.webp" alt="" width={224} height={132} className={`w-20 md:w-24 lg:w-28 h-auto mix-blend-multiply ${spinning === "topinambur" ? "animate-spin-once" : ""}`} />
           </div>
           {/* Celery — top left */}
           <div className="pointer-events-auto absolute top-[18%] left-[3%] md:left-[4%] lg:left-[8%] animate-drift animate-fade-in-delay-3 cursor-pointer" style={{ animationDelay: "5s" }} onClick={() => handleImageClick("celer")}>
-            <Image src="/images/new/celer.png" alt="" width={500} height={500} className={`w-24 md:w-28 lg:w-36 h-auto mix-blend-screen ${spinning === "celer" ? "animate-spin-once" : ""}`} />
+            <Image src="/images/new/celer.webp" alt="" width={288} height={287} className={`w-24 md:w-28 lg:w-36 h-auto mix-blend-screen ${spinning === "celer" ? "animate-spin-once" : ""}`} />
           </div>
         </div>
 
@@ -268,10 +268,10 @@ export function Hero({ content }: { content?: SiteContent | null }) {
 
           <div className="relative mt-3 md:mt-4 animate-fade-in-delay-2 cursor-pointer" onClick={() => handleImageClick("ron")}>
             <Image
-              src="/images/new/ron.png"
+              src="/images/new/ron.webp"
               alt="Ron McKinlay"
-              width={500}
-              height={650}
+              width={640}
+              height={912}
               className={`w-52 sm:w-60 md:w-72 lg:w-80 h-auto mix-blend-screen ${spinning === "ron" ? "animate-spin-once" : "hover:animate-jiggle"} cursor-pointer`}
               priority
             />
@@ -399,7 +399,7 @@ export function Hero({ content }: { content?: SiteContent | null }) {
       {/* ── Footer ── */}
       <footer className="flex flex-col items-center gap-5 px-5 py-10 md:py-16 border-t border-border">
         <Image
-          src="/images/logo.png"
+          src="/images/logo.webp"
           alt="Logo"
           width={80}
           height={40}
