@@ -502,14 +502,27 @@ export function Hero({ content }: { content?: SiteContent | null }) {
 
       {/* ── Menu / Event section ── */}
       <section className="relative px-5 py-16 md:px-10 md:py-24 lg:px-16 lg:py-32 bg-[#1e3a6e] text-[#f3efe6]">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl tracking-tight text-center">
-            {s.menuTitle}
-          </h2>
-          <div className="mt-8 md:mt-12 flex flex-col gap-6 text-[13px] md:text-[15px] leading-[1.9] font-sans text-[#f3efe6]/70">
-            <p>{s.menuText}</p>
-            <p className="text-[#f3efe6] font-medium">{s.menuText2}</p>
-            <p>{s.menuText3}</p>
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+          {/* Left column — text */}
+          <div>
+            <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl tracking-tight">
+              {s.menuTitle}
+            </h2>
+            <div className="mt-8 md:mt-12 flex flex-col gap-6 text-[13px] md:text-[15px] leading-[1.9] font-sans text-[#f3efe6]/70">
+              <p>{s.menuText}</p>
+              <p className="text-[#f3efe6] font-medium">{s.menuText2}</p>
+              <p>{s.menuText3}</p>
+            </div>
+          </div>
+          {/* Right column — lamb image */}
+          <div className="hidden md:flex justify-center">
+            <Image
+              src="/images/new/kejta.webp"
+              alt=""
+              width={288}
+              height={769}
+              className="w-56 md:w-64 lg:w-72 h-auto"
+            />
           </div>
         </div>
       </section>
