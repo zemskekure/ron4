@@ -175,6 +175,51 @@ function useSpinOnClick() {
   return { spinning, spin }
 }
 
+function VideoPlayer({ src }: { src: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [muted, setMuted] = useState(true)
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !muted
+      setMuted(!muted)
+    }
+  }
+
+  return (
+    <div className="relative w-56 md:w-64 lg:w-72 rounded-2xl overflow-hidden shadow-lg">
+      <video
+        ref={videoRef}
+        src={src}
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="w-full h-auto"
+      />
+      <button
+        onClick={toggleMute}
+        className="absolute bottom-3 right-3 w-9 h-9 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-sm text-white hover:bg-black/60 transition-colors cursor-pointer"
+        aria-label={muted ? "Unmute" : "Mute"}
+      >
+        {muted ? (
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+            <line x1="23" y1="9" x2="17" y2="15" />
+            <line x1="17" y1="9" x2="23" y2="15" />
+          </svg>
+        ) : (
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+          </svg>
+        )}
+      </button>
+    </div>
+  )
+}
+
 export function Hero({ content }: { content?: SiteContent | null }) {
   const [lang, setLang] = useState<Lang>("cs")
   const t = content ?? defaults
@@ -322,16 +367,9 @@ export function Hero({ content }: { content?: SiteContent | null }) {
             </div>
           </div>
 
-          {/* Right column — video */}
-          <div>
-            <video
-              src="/images/ron.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full rounded-2xl shadow-lg"
-            />
+          {/* Right column — video mini-player */}
+          <div className="flex justify-center">
+            <VideoPlayer src="/images/ron-qa.mp4" />
           </div>
         </div>
       </section>
