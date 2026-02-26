@@ -175,19 +175,78 @@ function useSpinOnClick() {
   return { spinning, spin }
 }
 
-function VideoPlayer({ src }: { src: string }) {
+function VideoPlayer({ src, lang }: { src: string; lang: Lang }) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [muted, setMuted] = useState(true)
+  const [paused, setPaused] = useState(false)
+  const [hovered, setHovered] = useState(false)
+  const [ccOn, setCcOn] = useState(true)
 
-  const toggleMute = () => {
+  // Enable default subtitle track on mount
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+    const initTracks = () => {
+      const tracks = video.textTracks
+      for (let i = 0; i < tracks.length; i++) {
+        tracks[i].mode = tracks[i].language === lang ? "showing" : "hidden"
+      }
+    }
+    if (video.textTracks.length > 0) {
+      initTracks()
+    } else {
+      video.addEventListener("loadedmetadata", initTracks, { once: true })
+    }
+  }, [])
+
+  const toggleMute = (e: React.MouseEvent) => {
+    e.stopPropagation()
     if (videoRef.current) {
       videoRef.current.muted = !muted
       setMuted(!muted)
     }
   }
 
+  const toggleCC = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    if (videoRef.current) {
+      const tracks = videoRef.current.textTracks
+      const newCcOn = !ccOn
+      setCcOn(newCcOn)
+      for (let i = 0; i < tracks.length; i++) {
+        tracks[i].mode = newCcOn && tracks[i].language === lang ? "showing" : "hidden"
+      }
+    }
+  }
+
+  // Switch active subtitle track when language changes
+  useEffect(() => {
+    if (!videoRef.current || !ccOn) return
+    const tracks = videoRef.current.textTracks
+    for (let i = 0; i < tracks.length; i++) {
+      tracks[i].mode = tracks[i].language === lang ? "showing" : "hidden"
+    }
+  }, [lang, ccOn])
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (videoRef.current.paused) {
+        videoRef.current.play()
+        setPaused(false)
+      } else {
+        videoRef.current.pause()
+        setPaused(true)
+      }
+    }
+  }
+
   return (
-    <div className="relative w-56 md:w-64 lg:w-72 rounded-2xl overflow-hidden shadow-lg">
+    <div
+      className="group relative w-56 md:w-64 lg:w-72 rounded-2xl overflow-hidden shadow-lg cursor-pointer"
+      onClick={togglePlay}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
       <video
         ref={videoRef}
         src={src}
@@ -195,27 +254,61 @@ function VideoPlayer({ src }: { src: string }) {
         loop
         muted
         playsInline
+        crossOrigin="anonymous"
         className="w-full h-auto"
-      />
-      <button
-        onClick={toggleMute}
-        className="absolute bottom-3 right-3 w-9 h-9 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-sm text-white hover:bg-black/60 transition-colors cursor-pointer"
-        aria-label={muted ? "Unmute" : "Mute"}
       >
-        {muted ? (
+        <track kind="subtitles" src="/images/ron-qa-en.vtt" srcLang="en" label="English" />
+        <track kind="subtitles" src="/images/ron-qa-cs.vtt" srcLang="cs" label="Česky" />
+      </video>
+      {/* Play/pause overlay */}
+      <div className={`absolute inset-0 flex items-center justify-center bg-black/20 transition-opacity duration-200 ${paused || hovered ? "opacity-100" : "opacity-0"}`}>
+        <div className="w-14 h-14 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-sm text-white">
+          {paused ? (
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+              <polygon points="6 3 20 12 6 21 6 3" />
+            </svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+              <rect x="5" y="3" width="5" height="18" rx="1" />
+              <rect x="14" y="3" width="5" height="18" rx="1" />
+            </svg>
+          )}
+        </div>
+      </div>
+      {/* Bottom controls */}
+      <div className="absolute bottom-3 right-3 z-10 flex gap-2">
+        {/* CC button */}
+        <button
+          onClick={toggleCC}
+          className={`w-9 h-9 flex items-center justify-center rounded-full backdrop-blur-sm text-white transition-colors cursor-pointer ${ccOn ? "bg-white/80 text-black" : "bg-black/40 hover:bg-black/60"}`}
+          aria-label={ccOn ? "Disable subtitles" : "Enable subtitles"}
+        >
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-            <line x1="23" y1="9" x2="17" y2="15" />
-            <line x1="17" y1="9" x2="23" y2="15" />
+            <rect x="1" y="4" width="22" height="16" rx="3" />
+            <text x="12" y="15" textAnchor="middle" fontSize="9" fontWeight="bold" fill="currentColor" stroke="none">CC</text>
           </svg>
-        ) : (
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-            <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
-            <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
-          </svg>
-        )}
-      </button>
+        </button>
+        {/* Mute button */}
+        <button
+          onClick={toggleMute}
+          className="w-9 h-9 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-sm text-white hover:bg-black/60 transition-colors cursor-pointer"
+          aria-label={muted ? "Unmute" : "Mute"}
+        >
+          {muted ? (
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+              <line x1="23" y1="9" x2="17" y2="15" />
+              <line x1="17" y1="9" x2="23" y2="15" />
+            </svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+            </svg>
+          )}
+        </button>
+      </div>
     </div>
   )
 }
@@ -369,7 +462,7 @@ export function Hero({ content }: { content?: SiteContent | null }) {
 
           {/* Right column — video mini-player */}
           <div className="flex justify-center">
-            <VideoPlayer src="/images/ron-qa.mp4" />
+            <VideoPlayer src="/images/ron-qa.mp4" lang={lang} />
           </div>
         </div>
       </section>
