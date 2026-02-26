@@ -574,25 +574,58 @@ export function Hero({ content }: { content?: SiteContent | null }) {
       </section>
 
       {/* ── Footer ── */}
-      <footer className="flex flex-col items-center gap-5 px-5 py-10 md:py-16 border-t border-border">
-        <Image
-          src="/images/logo.webp"
-          alt="Logo"
-          width={80}
-          height={40}
-          className="w-10 md:w-12 h-auto opacity-40"
-        />
-        <span className="text-[11px] md:text-[12px] font-sans text-foreground/40 tracking-wide">
-          {s.footerCredit}
-        </span>
-        <a
-          href="https://www.instagram.com/restaurace_cestr/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[10px] md:text-[11px] font-sans tracking-[0.15em] uppercase text-[#1e3a6e]/50 hover:text-[#1e3a6e] transition-colors duration-200"
-        >
-          @restaurace_cestr
-        </a>
+      <footer className="px-5 py-10 md:px-10 md:py-14 lg:px-16 border-t border-border">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 text-center">
+          {/* Ambiente */}
+          <div className="flex flex-col items-center gap-2.5">
+            <Image
+              src="/images/ambiente_logo.webp"
+              alt="Ambiente"
+              width={40}
+              height={40}
+              className="w-7 h-7 opacity-40"
+            />
+            <p className="text-[11px] md:text-[12px] font-sans text-foreground/35 leading-relaxed">
+              {s.footerCredit}
+            </p>
+          </div>
+
+          {/* Contact */}
+          <div className="flex flex-col items-center gap-2.5">
+            <Image
+              src="/images/logo.webp"
+              alt="Čestr"
+              width={80}
+              height={40}
+              className="w-7 h-auto opacity-30"
+            />
+            <div className="flex flex-col gap-1 text-[11px] md:text-[12px] font-sans text-foreground/40">
+              <span className="text-foreground/55">Restaurace Čestr</span>
+              <a href="mailto:cestr@ambiente.cz" className="hover:text-[#1e3a6e] transition-colors">cestr@ambiente.cz</a>
+              <a href="tel:+420222727851" className="hover:text-[#1e3a6e] transition-colors">+420 222 727 851</a>
+            </div>
+          </div>
+
+          {/* Social */}
+          <div className="flex flex-col items-center gap-2.5">
+            <span className="text-[9px] md:text-[10px] font-sans tracking-[0.15em] uppercase text-foreground/25">
+              {lang === "cs" ? "Sociální sítě" : "Social"}
+            </span>
+            <a
+              href="https://www.instagram.com/restaurace_cestr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-[11px] md:text-[12px] font-sans text-foreground/40 hover:text-[#1e3a6e] transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="5" />
+                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
+              </svg>
+              @restaurace_cestr
+            </a>
+          </div>
+        </div>
       </footer>
     </div>
   )
