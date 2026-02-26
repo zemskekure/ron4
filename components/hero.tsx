@@ -228,6 +228,18 @@ function VideoPlayer({ src, lang }: { src: string; lang: Lang }) {
     }
   }, [lang, ccOn])
 
+  const goFullscreen = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    const video = videoRef.current
+    if (!video) return
+    if (video.requestFullscreen) {
+      video.requestFullscreen()
+    } else if ((video as any).webkitEnterFullscreen) {
+      // iOS Safari
+      (video as any).webkitEnterFullscreen()
+    }
+  }
+
   const togglePlay = () => {
     if (videoRef.current) {
       if (videoRef.current.paused) {
@@ -277,6 +289,19 @@ function VideoPlayer({ src, lang }: { src: string; lang: Lang }) {
       </div>
       {/* Bottom controls */}
       <div className="absolute bottom-3 right-3 z-10 flex gap-2">
+        {/* Fullscreen button — mobile only */}
+        <button
+          onClick={goFullscreen}
+          className="md:hidden w-9 h-9 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-sm text-white hover:bg-black/60 transition-colors cursor-pointer"
+          aria-label="Fullscreen"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="15 3 21 3 21 9" />
+            <polyline points="9 21 3 21 3 15" />
+            <line x1="21" y1="3" x2="14" y2="10" />
+            <line x1="3" y1="21" x2="10" y2="14" />
+          </svg>
+        </button>
         {/* CC button */}
         <button
           onClick={toggleCC}
