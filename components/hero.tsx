@@ -179,7 +179,8 @@ function VideoPlayer({ src, lang }: { src: string; lang: Lang }) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [muted, setMuted] = useState(true)
   const [paused, setPaused] = useState(false)
-  const [hovered, setHovered] = useState(false)
+  const [showControls, setShowControls] = useState(false)
+  const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const [ccOn, setCcOn] = useState(true)
 
   // Enable default subtitle track on mount
@@ -240,6 +241,12 @@ function VideoPlayer({ src, lang }: { src: string; lang: Lang }) {
     }
   }
 
+  const flashControls = () => {
+    setShowControls(true)
+    if (hideTimer.current) clearTimeout(hideTimer.current)
+    hideTimer.current = setTimeout(() => setShowControls(false), 1500)
+  }
+
   const togglePlay = () => {
     if (videoRef.current) {
       if (videoRef.current.paused) {
@@ -249,6 +256,7 @@ function VideoPlayer({ src, lang }: { src: string; lang: Lang }) {
         videoRef.current.pause()
         setPaused(true)
       }
+      flashControls()
     }
   }
 
@@ -256,8 +264,8 @@ function VideoPlayer({ src, lang }: { src: string; lang: Lang }) {
     <div
       className="group relative w-56 md:w-64 lg:w-72 rounded-2xl overflow-hidden shadow-lg cursor-pointer"
       onClick={togglePlay}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseEnter={() => setShowControls(true)}
+      onMouseLeave={() => setShowControls(false)}
     >
       <video
         ref={videoRef}
@@ -273,7 +281,7 @@ function VideoPlayer({ src, lang }: { src: string; lang: Lang }) {
         <track kind="subtitles" src="/images/ron-qa-cs.vtt" srcLang="cs" label="Česky" />
       </video>
       {/* Play/pause overlay */}
-      <div className={`absolute inset-0 flex items-center justify-center bg-black/20 transition-opacity duration-200 ${paused || hovered ? "opacity-100" : "opacity-0"}`}>
+      <div className={`absolute inset-0 flex items-center justify-center bg-black/20 transition-opacity duration-200 ${paused || showControls ? "opacity-100" : "opacity-0"}`}>
         <div className="w-14 h-14 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-sm text-white">
           {paused ? (
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" stroke="none">
