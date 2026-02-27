@@ -33,7 +33,7 @@ const newParis = localFont({
 export const metadata: Metadata = {
   title: 'Ron McKinlay v Čestru — 26. 3. 2026',
   description:
-    'Vícechodové menu z české sezóny očima kanadského šéfkuchaře. Jednorázový pop-up v Praze, 150 večeří.',
+    'Vícechodové degustační menu z českých surovin očima kanadského šéfkuchaře. Jednorázový pop-up v Praze, 130 večeří.',
 }
 
 export const viewport: Viewport = {
