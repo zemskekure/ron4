@@ -103,61 +103,61 @@ const defaults = {
   cs: {
     subtitle: "v Čestru",
     date: "26. března 2026, restaurace Čestr",
-    description: "Vícechodové večerní menu z českých surovin očima kanadského šéfkuchaře",
+    description: "Vícechodové degustační menu z českých surovin očima kanadského šéfkuchaře",
     cta: "Rezervovat večeři",
     ctaUrl: "#rezervace",
     about: "O Ronovi",
     aboutTitle: "Ron McKinlay",
     aboutText:
-      "Rodák z Vancouveru našel svou vášeň pro vaření už v dětství – za nedělních rodinných obědů (sunday roast), které s láskou připravovala jeho maminka. Více než deset let sbíral zkušenosti v zahraničí – v Edinburghu se učil pod michelinským šéfkuchařem Tomem Kitchinem, v Melbourne pak piloval své řemeslo po boku Scotta Picketta. V Kanadě několik let pracoval jako executive chef v podniku Canoe.",
+      "Rodák z Vancouveru našel svou vášeň pro vaření už v dětství \u2013 za nedělních rodinných obědů (Sunday roast), které s láskou připravovala jeho maminka. Více než deset let sbíral zkušenosti v zahraničí. V Edinburghu se učil pod michelinským šéfkuchařem **Tomem Kitchinem**, v Melbourne pak piloval techniky po boku **Scotta Picketta**. V Torontu několik let působil jako executive chef v podniku **Canoe**.",
     aboutText2:
       "Ron je známý svou disciplinovaností a hlubokým respektem k lokálním surovinám. V současné době buduje vlastní koncept, školí profesionály a poskytuje konzultace restauracím i značkám.",
     aboutQuote:
-      "\u201EMoje maminka měla a má zahradu, takže na stole bylo vždycky něco sezónního. Právě tenhle základ poctivého, dobře připraveného jídla mě pravděpodobně formoval úplně stejně silně jako jakékoli klasické kulinární vzdělání.\u201C",
+      "\u201EMoje maminka má zahradu, takže na stole bylo vždycky něco sezonního. Právě tenhle základ poctivého, dobře připraveného jídla mě pravděpodobně formoval úplně stejně silně jako jakékoli klasické kulinářské vzdělání.\u201C",
     menuTitle: "Co vás čeká",
     menuText:
-      "Kanadský šéfkuchař Ron McKinlay připraví v restauraci Čestr několikachodové menu inspirované českou sezónou. Hlavní roli sehrají suroviny od místních farmářů, především jehněčí, a Ronovy zkušenosti a recepty. V jeho vizi ho podpoří tým kuchařů z Ambiente.",
+      "Kanadský šéfkuchař Ron McKinlay připraví v restauraci Čestr **několikachodové degustační menu** inspirované českou sezonou. Po boku mu bude stát tým zkušených kuchařů z Ambiente.",
     menuText2:
-      "Ron miluje obyčejné suroviny a díky preciznímu technickému přístupu z nich vytváří výjimečný zážitek. Žádné zkratky. Poctivé řemeslo. Plná chuť. Během večeře bude navíc prostor dozvědět se o menu víc přímo od něj.",
+      "V hlavní roli budou suroviny od tuzemských farmářů, především **jehněčí**, Ronovy recepty a bohaté zkušenosti. Ron staví jídla na obyčejných surovinách, z nichž díky precizně osvojeným **francouzským technikám** dokáže připravit výjimečný zážitek.",
     menuText3:
-      "Pop-up se koná v restauraci Čestr, která stojí na poctivých lokálních a sezónních surovinách a specializuje se na maso z české produkce. Díky otevřené kuchyni a prosklené bourárně budete mít celé dění na dohled. Přijďte se podívat, jak vypadá a chutná kanadská kultura v kombinaci s tou českou.",
+      "Během večera budete mít prostor dozvědět se o podrobnostech a vzniku menu přímo od samotného šéfkuchaře. Pop-up se koná v restauraci Čestr, která klade důraz na poctivé lokální a sezonní suroviny od spřátelených farmářů. Maso z české produkce je místní specialitou. Díky otevřené kuchyni a prosklené bourárně můžete nahlédnout do centra dění.",
     infoTitle: "Praktické informace",
-    infoDate: "26. března 2026, 17:00\u201321:00",
+    infoDate: "26. března, 17:00\u201321:00",
     infoPlace: "Restaurace Čestr, Praha",
     infoDiet:
       "Vzhledem k charakteru večeře a pevně stanovenému menu není možné připravit vegetariánskou ani veganskou variantu. V případě dietních omezení či alergií nás prosím kontaktujte před vytvořením rezervace, abychom mohli ověřit dostupné možnosti.",
     contextText:
-      "Praha je kulinářsky na vzestupu a vzbuzuje čím dál větší zájem zahraničních kuchařů. Ron McKinlay přijel na pozvání kreativních šéfkuchařů Ambiente, aby zprostředkoval interní vzdělávací workshop a besedu pro veřejnost. Rozhodl se však zůstat déle a tak vznikla i příležitost podělit se o jeho zkušenosti v celé šíři prostřednictvím tohoto pop-upu.",
+      "Kulinářsky vyspělá Praha se čím dál častěji objevuje v hledáčku zahraničních kuchařů. Ron McKinlay přijíždí na pozvání kreativních šéfkuchařů Ambiente, aby zprostředkoval interní vzdělávací workshop a moderovanou besedu pro veřejnost. Rozhodl se však zůstat déle, a tak vznikla příležitost, aby se podělil o své zkušenosti prostřednictvím tohoto pop-upu.",
     footerCredit: "Za pop-upem stojí lidé z Ambiente",
   },
   en: {
     subtitle: "in Čestr",
-    date: "March 26, 2026, Čestr Restaurant",
-    description: "A multi-course evening menu from Czech ingredients through the eyes of a Canadian chef",
-    cta: "Reserve a dinner",
+    date: "26 March 2026, Čestr restaurant",
+    description: "A multi-course Czech tasting menu reimagined by a Canadian chef",
+    cta: "Make your reservation",
     ctaUrl: "#rezervace",
     about: "About Ron",
     aboutTitle: "Ron McKinlay",
     aboutText:
-      "A native of Vancouver, Ron discovered his passion for cooking as a child \u2014 during the Sunday roasts lovingly prepared by his mother. Over more than a decade, he honed his skills abroad \u2014 in Edinburgh under Michelin-starred chef Tom Kitchin, and in Melbourne alongside Scott Pickett. In Canada, he spent several years as executive chef at Canoe.",
+      "A Vancouver native, Ron discovered his passion for cooking early on, sparked by the Sunday roasts his mother prepared with loving care. He later embarked on an international journey spanning more than a decade: training under Michelin-starred **Tom Kitchin** in Edinburgh, perfecting his craft with **Scott Pickett** in Melbourne, and later steering the kitchen as executive chef at Toronto\u2019s **Canoe**.",
     aboutText2:
-      "Ron is known for his discipline and deep respect for local ingredients. He is currently building his own concept, training professionals, and consulting for restaurants and brands.",
+      "Ron is known for his discipline and deep respect for local ingredients. He is currently developing his own concept, training professionals and providing consulting for restaurants and brands.",
     aboutQuote:
-      "\u201CMy mum had a garden in the backyard and still does. There was always something seasonal on the table. That foundation of honest, well cooked food probably shaped me just as much as any classical training did.\u201D",
-    menuTitle: "What to expect",
+      "\u201CMy mum had a garden in the backyard and still does. There was always something seasonal on the table. That foundation of honest, well-cooked food probably shaped me just as much as any classical training did.\u201D",
+    menuTitle: "What you can look forward to",
     menuText:
-      "Canadian chef Ron McKinlay will prepare a multi-course menu at Čestr restaurant, inspired by the Czech season. Local farmers\u2019 ingredients \u2014 especially lamb \u2014 will take center stage, alongside Ron\u2019s experience and recipes. He will be supported by the Ambiente kitchen team.",
+      "Canadian chef Ron McKinlay will be preparing a **multi-course tasting menu** at Čestr, inspired by the Czech season. An experienced team of Ambiente chefs will be working alongside him.",
     menuText2:
-      "Ron loves simple ingredients and, through a precise technical approach, transforms them into an exceptional experience. No shortcuts. Honest craft. Full flavor. During the dinner, there will also be space to learn more about the menu directly from him.",
+      "Ingredients from local farmers, especially **lamb**, along with Ron\u2019s own recipes and his wealth of experience will be taking centre stage. Ron takes humble, everyday ingredients and transforms them into extraordinary creations through his finely honed **French techniques**.",
     menuText3:
-      "The pop-up takes place at Čestr restaurant, which is built on honest, local, and seasonal ingredients and specializes in Czech-raised meat. Thanks to the open kitchen and glass-walled butchery, you\u2019ll have the action in full view. Come see what Canadian culture looks and tastes like when combined with Czech tradition.",
+      "Over the course of the evening, you will be able to delve into the menu\u2019s creation and its finer nuances, guided by the chef himself. The pop-up will be taking place at Čestr, a restaurant that champions honest local and seasonal ingredients sourced from trusted farmers. Meat from Czech producers is a house specialty, and the open kitchen and glass-walled butchery will give you a clear view of everything happening behind the scenes.",
     infoTitle: "Practical information",
-    infoDate: "March 26, 2026, 5:00\u20139:00 PM",
-    infoPlace: "Čestr Restaurant, Prague",
+    infoDate: "26 March, 5:00\u20139:00 PM",
+    infoPlace: "Čestr restaurant, Prague",
     infoDiet:
-      "Due to the nature of the dinner and a fixed menu, we are unable to prepare a vegetarian or vegan option. If you have dietary restrictions or allergies, please contact us before making a reservation so we can verify available options.",
+      "The nature of the dinner and the fixed menu mean we are unable to offer a vegetarian or vegan option. If you have dietary restrictions or allergies, please contact us before making a reservation so we can verify what accommodations may be possible.",
     contextText:
-      "Prague\u2019s culinary scene is on the rise and attracting growing interest from international chefs. Ron McKinlay came at the invitation of Ambiente\u2019s creative chefs to lead an internal training workshop and a public talk. He decided to stay longer, creating the opportunity to share his experience in full through this pop-up.",
+      "Culinarily sophisticated Prague is appearing increasingly often on the radar of international chefs. Ron McKinlay is visiting at the invitation of Ambiente\u2019s creative chefs to lead an internal training workshop and a moderated public talk. He chose to extend his stay, creating the opportunity to share his experience through this pop-up.",
     footerCredit: "This pop-up is brought to you by the people at Ambiente",
   },
 } as const
@@ -165,6 +165,18 @@ const defaults = {
 type LangContent = Record<string, string>
 type SiteContent = { cs: LangContent; en: LangContent }
 type Lang = "cs" | "en"
+
+/** Renders text with **bold** markers as <strong> elements */
+function RichText({ text, className }: { text: string; className?: string }) {
+  const parts = text.split(/\*\*(.*?)\*\*/g)
+  return (
+    <p className={className}>
+      {parts.map((part, i) =>
+        i % 2 === 1 ? <strong key={i} className="text-inherit font-semibold">{part}</strong> : part
+      )}
+    </p>
+  )
+}
 
 function useSpinOnClick() {
   const [spinning, setSpinning] = useState<string | null>(null)
@@ -484,12 +496,8 @@ export function Hero({ content }: { content?: SiteContent | null }) {
               </p>
             </blockquote>
             <div className="mt-6 md:mt-8 flex flex-col gap-4">
-              <p className="text-[13px] md:text-[15px] leading-[1.9] text-foreground/60 font-sans">
-                {s.aboutText}
-              </p>
-              <p className="text-[13px] md:text-[15px] leading-[1.9] text-foreground/60 font-sans">
-                {s.aboutText2}
-              </p>
+              <RichText text={s.aboutText} className="text-[13px] md:text-[15px] leading-[1.9] text-foreground/60 font-sans" />
+              <RichText text={s.aboutText2} className="text-[13px] md:text-[15px] leading-[1.9] text-foreground/60 font-sans" />
             </div>
           </div>
 
@@ -509,9 +517,9 @@ export function Hero({ content }: { content?: SiteContent | null }) {
               {s.menuTitle}
             </h2>
             <div className="mt-8 md:mt-12 flex flex-col gap-6 text-[13px] md:text-[15px] leading-[1.9] font-sans text-[#f3efe6]/70">
-              <p>{s.menuText}</p>
-              <p className="text-[#f3efe6] font-medium">{s.menuText2}</p>
-              <p>{s.menuText3}</p>
+              <RichText text={s.menuText} />
+              <RichText text={s.menuText2} />
+              <RichText text={s.menuText3} />
             </div>
           </div>
           {/* Right column — lamb image */}
@@ -554,15 +562,7 @@ export function Hero({ content }: { content?: SiteContent | null }) {
             </div>
           </div>
 
-          <p className="mt-8 md:mt-10 text-[12px] md:text-[13px] leading-[1.8] text-foreground/40 font-sans text-center">
-            {s.infoDiet}
-          </p>
-
-          <p className="mt-6 text-[12px] md:text-[13px] leading-[1.8] text-foreground/35 font-sans italic text-center">
-            {s.contextText}
-          </p>
-
-          <div className="mt-10 md:mt-14 flex justify-center">
+          <div className="mt-8 md:mt-10 flex justify-center">
             <a
               href={s.ctaUrl ?? "#rezervace"}
               className="px-10 py-3.5 bg-[#1e3a6e] text-background border border-[#1e3a6e] hover:bg-transparent hover:text-[#1e3a6e] transition-colors duration-300 font-sans text-[11px] md:text-[12px] tracking-[0.15em] uppercase"
@@ -570,14 +570,22 @@ export function Hero({ content }: { content?: SiteContent | null }) {
               {s.cta}
             </a>
           </div>
+
+          <p className="mt-8 md:mt-10 text-[12px] md:text-[13px] leading-[1.8] text-foreground/40 font-sans text-center">
+            {s.infoDiet}
+          </p>
+
+          <p className="mt-6 text-[11px] md:text-[12px] leading-[1.8] text-foreground/25 font-sans italic text-center">
+            {s.contextText}
+          </p>
         </div>
       </section>
 
       {/* ── Footer ── */}
       <footer className="px-5 py-10 md:px-10 md:py-14 lg:px-16 border-t border-border">
         <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 text-center">
-          {/* Ambiente */}
-          <div className="flex flex-col items-center gap-2.5">
+          {/* Ambiente — last on mobile, first on desktop */}
+          <div className="flex flex-col items-center gap-2.5 order-last sm:order-first">
             <Image
               src="/images/ambiente_logo.webp"
               alt="Ambiente"
@@ -601,27 +609,24 @@ export function Hero({ content }: { content?: SiteContent | null }) {
             />
             <div className="flex flex-col gap-1 text-[11px] md:text-[12px] font-sans text-foreground/40">
               <span className="text-foreground/55">Restaurace Čestr</span>
-              <a href="mailto:cestr@ambiente.cz" className="hover:text-[#1e3a6e] transition-colors">cestr@ambiente.cz</a>
-              <a href="tel:+420222727851" className="hover:text-[#1e3a6e] transition-colors">+420 222 727 851</a>
+              <a href="mailto:cestr@ambi.cz" className="hover:text-[#1e3a6e] transition-colors">cestr@ambi.cz</a>
+              <a href="tel:+420739266287" className="hover:text-[#1e3a6e] transition-colors">+420 739 266 287</a>
             </div>
           </div>
 
           {/* Social */}
           <div className="flex flex-col items-center gap-2.5">
-            <span className="text-[9px] md:text-[10px] font-sans tracking-[0.15em] uppercase text-foreground/25">
-              {lang === "cs" ? "Sociální sítě" : "Social"}
-            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-foreground/30">
+              <rect x="2" y="2" width="20" height="20" rx="5" />
+              <circle cx="12" cy="12" r="5" />
+              <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
+            </svg>
             <a
               href="https://www.instagram.com/restaurace_cestr/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-[11px] md:text-[12px] font-sans text-foreground/40 hover:text-[#1e3a6e] transition-colors"
+              className="text-[11px] md:text-[12px] font-sans text-foreground/40 hover:text-[#1e3a6e] transition-colors"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="2" y="2" width="20" height="20" rx="5" />
-                <circle cx="12" cy="12" r="5" />
-                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
-              </svg>
               @restaurace_cestr
             </a>
           </div>
