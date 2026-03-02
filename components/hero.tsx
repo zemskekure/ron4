@@ -465,6 +465,8 @@ export function Hero({ content }: { content?: SiteContent | null }) {
             <p className="text-foreground/50 normal-case tracking-normal text-[13px] md:text-[15px] max-w-md">{s.description}</p>
             <a
               href={s.ctaUrl ?? "#rezervace"}
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-10 py-3.5 bg-[#1e3a6e] text-background border border-[#1e3a6e] hover:bg-transparent hover:text-[#1e3a6e] transition-colors duration-300"
             >
               {s.cta}
@@ -565,6 +567,8 @@ export function Hero({ content }: { content?: SiteContent | null }) {
           <div className="mt-8 md:mt-10 flex justify-center">
             <a
               href={s.ctaUrl ?? "#rezervace"}
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-10 py-3.5 bg-[#1e3a6e] text-background border border-[#1e3a6e] hover:bg-transparent hover:text-[#1e3a6e] transition-colors duration-300 font-sans text-[11px] md:text-[12px] tracking-[0.15em] uppercase"
             >
               {s.cta}
