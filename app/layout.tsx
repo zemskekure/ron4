@@ -48,7 +48,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="cs" className="scroll-smooth">
-      <head>
+      <body
+        className={`${inter.variable} ${newParis.variable} font-sans antialiased`}
+      >
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-ZXYNZJX8K0"
           strategy="afterInteractive"
@@ -61,10 +63,6 @@ export default function RootLayout({
             gtag('config', 'G-ZXYNZJX8K0');
           `}
         </Script>
-      </head>
-      <body
-        className={`${inter.variable} ${newParis.variable} font-sans antialiased`}
-      >
         {children}
         <Analytics />
       </body>
