@@ -14,6 +14,16 @@
     "menuText": "Kanadský šéfkuchař Ron McKinlay připraví v restauraci Čestr **několikachodové degustační menu** inspirované českou sezonou. Po boku mu bude stát tým zkušených kuchařů z Ambiente.",
     "menuText2": "V hlavní roli budou suroviny od tuzemských farmářů, především **jehněčí**, Ronovy recepty a bohaté zkušenosti. Ron staví jídla na obyčejných surovinách, z nichž díky precizně osvojeným **francouzským technikám** dokáže připravit výjimečný zážitek.",
     "menuText3": "Během večera budete mít prostor dozvědět se o podrobnostech a vzniku menu přímo od samotného šéfkuchaře. Pop-up se koná v restauraci Čestr, která klade důraz na poctivé lokální a sezonní suroviny od spřátelených farmářů. Maso z české produkce je místní specialitou. Díky otevřené kuchyni a prosklené bourárně můžete nahlédnout do centra dění.",
+    "menuSectionTitle": "Menu",
+    "menuCourses": [
+      { "name": "Hovězí tatarák", "desc": "Nakládané jablko, parfait z foie gras, křen" },
+      { "name": "Cibule", "desc": "Parmazánový krém (custard), olej z bobkového listu" },
+      { "name": "Uzený pstruh a mušle sv. Jakuba", "desc": "Inkoust ze sépie, topinamburovy bisque" },
+      { "name": "Chléb a máslo", "desc": "Chléb s kopřivou, jehněčím jus a výpekem" },
+      { "name": "Jehněčí consommé", "desc": "" },
+      { "name": "Jehněčí hřbet", "desc": "Celer, libeček, krémové kopřivy" },
+      { "name": "Koláč z opálené řasy Nori", "desc": "Nori chantilly, krém z hnědého másla" }
+    ],
     "infoTitle": "Praktické informace",
     "infoDate": "26. března, 17:00\u201321:00",
     "infoPlace": "Restaurace Čestr, Praha",
@@ -36,6 +46,16 @@
     "menuText": "Canadian chef Ron McKinlay will be preparing a **multi-course tasting menu** at Čestr, inspired by the Czech season. An experienced team of Ambiente chefs will be working alongside him.",
     "menuText2": "Ingredients from local farmers, especially **lamb**, along with Ron\u2019s own recipes and his wealth of experience will be taking centre stage. Ron takes humble, everyday ingredients and transforms them into extraordinary creations through his finely honed **French techniques**.",
     "menuText3": "Over the course of the evening, you will be able to delve into the menu\u2019s creation and its finer nuances, guided by the chef himself. The pop-up will be taking place at Čestr, a restaurant that champions honest local and seasonal ingredients sourced from trusted farmers. Meat from Czech producers is a house specialty, and the open kitchen and glass-walled butchery will give you a clear view of everything happening behind the scenes.",
+    "menuSectionTitle": "Menu",
+    "menuCourses": [
+      { "name": "Beef Tartare", "desc": "Pickled apple, foie gras parfait, horseradish" },
+      { "name": "Onion", "desc": "Parmesan custard, bay leaf oil" },
+      { "name": "Smoked Trout & Scallop", "desc": "Squid ink paste, jerusalem artichoke bisque" },
+      { "name": "Bread & Butter", "desc": "Nettle bread with lamb jus & drippings" },
+      { "name": "Lamb Consommé", "desc": "" },
+      { "name": "Lamb Rack", "desc": "Celeriac, lovage, creamed nettles" },
+      { "name": "Burnt Seaweed Tart", "desc": "Nori chantilly, brown butter cream" }
+    ],
     "infoTitle": "Practical information",
     "infoDate": "26 March, 5:00\u20139:00 PM",
     "infoPlace": "Čestr restaurant, Prague",

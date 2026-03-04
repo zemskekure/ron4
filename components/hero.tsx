@@ -162,7 +162,8 @@ const defaults = {
   },
 } as const
 
-type LangContent = Record<string, string>
+type MenuCourse = { name: string; desc: string }
+type LangContent = Record<string, string> & { menuCourses?: MenuCourse[] }
 type SiteContent = { cs: LangContent; en: LangContent }
 type Lang = "cs" | "en"
 
@@ -536,6 +537,36 @@ export function Hero({ content }: { content?: SiteContent | null }) {
           </div>
         </div>
       </section>
+
+      {/* ── Menu courses section ── */}
+      {s.menuCourses && s.menuCourses.length > 0 && (
+        <section className="relative px-5 py-16 md:px-10 md:py-24 lg:px-16 lg:py-32 bg-[#1e3a6e] text-[#f3efe6] border-t border-[#f3efe6]/10">
+          <div className="max-w-lg mx-auto text-center">
+            <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl tracking-tight mb-12 md:mb-16">
+              {s.menuSectionTitle ?? "Menu"}
+            </h2>
+            <div className="flex flex-col gap-8 md:gap-10">
+              {s.menuCourses.map((course, i) => (
+                <div key={i}>
+                  <p className="font-serif text-[17px] md:text-[20px] lg:text-[22px] tracking-wide">
+                    {course.name}
+                  </p>
+                  {course.desc && (
+                    <p className="mt-1.5 font-sans text-[12px] md:text-[14px] text-[#f3efe6]/50 tracking-wide">
+                      {course.desc}
+                    </p>
+                  )}
+                  {i < s.menuCourses!.length - 1 && (
+                    <div className="mt-8 md:mt-10 flex justify-center">
+                      <span className="block w-6 h-px bg-[#f3efe6]/20" />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── Practical info section ── */}
       <section id="rezervace" className="relative px-5 py-12 md:px-10 md:py-20 lg:px-16 lg:py-24">
