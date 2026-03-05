@@ -361,6 +361,7 @@ function VideoPlayer({ src, lang }: { src: string; lang: Lang }) {
 
 export function Hero({ content }: { content?: SiteContent | null }) {
   const [lang, setLang] = useState<Lang>("cs")
+  const [menuOpen, setMenuOpen] = useState(false)
   const t = content ?? defaults
   const s = t[lang]
   const { spinning, spin } = useSpinOnClick()
@@ -380,6 +381,14 @@ export function Hero({ content }: { content?: SiteContent | null }) {
 
   return (
     <div>
+      {/* ── Floating language toggle ── */}
+      <button
+        onClick={() => setLang(lang === "cs" ? "en" : "cs")}
+        className="fixed top-4 left-4 md:top-6 md:left-6 z-50 text-[10px] md:text-[11px] font-sans tracking-[0.15em] uppercase bg-[#f3efe6]/90 text-[#1e3a6e] hover:text-[#1e3a6e]/70 transition-colors duration-200 cursor-pointer border border-[#1e3a6e]/20 hover:border-[#1e3a6e]/40 rounded-full px-3 py-1.5 shadow-sm backdrop-blur-sm"
+      >
+        {lang === "cs" ? "EN" : "CZ"}
+      </button>
+
       {/* ── Hero section ── */}
       <section className="relative min-h-svh flex flex-col px-5 py-4 md:px-10 md:py-6 lg:px-16 lg:py-8 overflow-hidden">
         {/* Clouds — around the typography at the top */}
@@ -427,17 +436,8 @@ export function Hero({ content }: { content?: SiteContent | null }) {
           </div>
         </div>
 
-        {/* Top bar */}
-        <header className="relative z-20 flex items-center justify-between w-full animate-fade-in">
-          <div>
-            <button
-              onClick={() => setLang(lang === "cs" ? "en" : "cs")}
-              className="text-[10px] md:text-[11px] font-sans tracking-[0.15em] uppercase text-[#1e3a6e] hover:text-[#1e3a6e]/70 transition-colors duration-200 cursor-pointer border border-[#1e3a6e] hover:border-[#1e3a6e]/70 rounded-full px-2.5 py-1"
-            >
-              {lang === "cs" ? "EN" : "CZ"}
-            </button>
-          </div>
-        </header>
+        {/* Top bar (spacer to preserve layout) */}
+        <header className="relative z-20 w-full animate-fade-in h-6" />
 
         {/* Main content area */}
         <div className="relative z-10 flex-1 flex flex-col items-center justify-center w-full max-w-3xl mx-auto">
@@ -538,81 +538,108 @@ export function Hero({ content }: { content?: SiteContent | null }) {
         </div>
       </section>
 
-      {/* ── Menu courses section ── */}
-      {s.menuCourses && s.menuCourses.length > 0 && (
-        <section className="relative px-5 py-16 md:px-10 md:py-24 lg:px-16 lg:py-32 bg-[#1e3a6e] text-[#f3efe6] border-t border-[#f3efe6]/10">
-          <div className="max-w-lg mx-auto text-center">
-            <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl tracking-tight mb-12 md:mb-16">
-              {s.menuSectionTitle ?? "Menu"}
-            </h2>
-            <div className="flex flex-col gap-8 md:gap-10">
-              {s.menuCourses.map((course, i) => (
-                <div key={i}>
-                  <p className="font-serif text-[17px] md:text-[20px] lg:text-[22px] tracking-wide">
-                    {course.name}
-                  </p>
-                  {course.desc && (
-                    <p className="mt-1.5 font-sans text-[12px] md:text-[14px] text-[#f3efe6]/50 tracking-wide">
-                      {course.desc}
-                    </p>
-                  )}
-                  {i < s.menuCourses!.length - 1 && (
-                    <div className="mt-8 md:mt-10 flex justify-center">
-                      <span className="block w-6 h-px bg-[#f3efe6]/20" />
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* ── Practical info section ── */}
+      {/* ── Practical info + Menu section ── */}
       <section id="rezervace" className="relative px-5 py-12 md:px-10 md:py-20 lg:px-16 lg:py-24">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl text-[#1e3a6e] tracking-tight text-center">
-            {s.infoTitle}
-          </h2>
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
+          {/* Left column — practical info */}
+          <div className="text-center md:text-left">
+            <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl text-[#1e3a6e] tracking-tight">
+              {s.infoTitle}
+            </h2>
 
-          <div className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-6 sm:gap-12 justify-center text-center">
-            <div>
-              <span className="block text-[10px] md:text-[11px] font-sans tracking-[0.15em] uppercase text-[#1e3a6e]/40 mb-1">
-                {lang === "cs" ? "Datum" : "Date"}
-              </span>
-              <span className="text-[14px] md:text-[16px] font-serif text-[#1e3a6e]">
-                {s.infoDate}
-              </span>
+            <div className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-6 sm:gap-12 justify-center md:justify-start">
+              <div>
+                <span className="block text-[10px] md:text-[11px] font-sans tracking-[0.15em] uppercase text-[#1e3a6e]/40 mb-1">
+                  {lang === "cs" ? "Datum" : "Date"}
+                </span>
+                <span className="text-[14px] md:text-[16px] font-serif text-[#1e3a6e]">
+                  {s.infoDate}
+                </span>
+              </div>
+              <div className="hidden sm:block w-px bg-border" />
+              <div>
+                <span className="block text-[10px] md:text-[11px] font-sans tracking-[0.15em] uppercase text-[#1e3a6e]/40 mb-1">
+                  {lang === "cs" ? "Místo" : "Venue"}
+                </span>
+                <span className="text-[14px] md:text-[16px] font-serif text-[#1e3a6e]">
+                  {s.infoPlace}
+                </span>
+              </div>
             </div>
-            <div className="hidden sm:block w-px bg-border" />
-            <div>
-              <span className="block text-[10px] md:text-[11px] font-sans tracking-[0.15em] uppercase text-[#1e3a6e]/40 mb-1">
-                {lang === "cs" ? "Místo" : "Venue"}
-              </span>
-              <span className="text-[14px] md:text-[16px] font-serif text-[#1e3a6e]">
-                {s.infoPlace}
-              </span>
+
+            <div className="mt-8 md:mt-10 flex justify-center md:justify-start">
+              <a
+                href={s.ctaUrl ?? "#rezervace"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-10 py-3.5 bg-[#1e3a6e] text-background border border-[#1e3a6e] hover:bg-transparent hover:text-[#1e3a6e] transition-colors duration-300 font-sans text-[11px] md:text-[12px] tracking-[0.15em] uppercase"
+              >
+                {s.cta}
+              </a>
             </div>
+
+            <p className="mt-8 md:mt-10 text-[12px] md:text-[13px] leading-[1.8] text-foreground/40 font-sans">
+              {s.infoDiet}
+            </p>
+
+            <p className="mt-6 text-[11px] md:text-[12px] leading-[1.8] text-foreground/25 font-sans italic">
+              {s.contextText}
+            </p>
           </div>
 
-          <div className="mt-8 md:mt-10 flex justify-center">
-            <a
-              href={s.ctaUrl ?? "#rezervace"}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-10 py-3.5 bg-[#1e3a6e] text-background border border-[#1e3a6e] hover:bg-transparent hover:text-[#1e3a6e] transition-colors duration-300 font-sans text-[11px] md:text-[12px] tracking-[0.15em] uppercase"
-            >
-              {s.cta}
-            </a>
-          </div>
+          {/* Right column — menu card */}
+          {s.menuCourses && s.menuCourses.length > 0 && (
+            <div className="md:relative md:z-30">
+            <div className="md:absolute md:top-0 md:left-0 md:right-0 bg-[#faf8f3] text-[#1e3a6e] rounded-sm shadow-lg overflow-hidden border border-[#1e3a6e]/5">
+              <button
+                onClick={() => setMenuOpen((o) => !o)}
+                className="w-full px-8 py-6 flex items-center justify-between cursor-pointer"
+              >
+                <h3 className="font-serif text-xl md:text-2xl tracking-tight">
+                  {s.menuSectionTitle ?? "Menu"}
+                </h3>
+                <span
+                  className="text-[#1e3a6e]/40 transition-transform duration-300"
+                  style={{ transform: menuOpen ? "rotate(180deg)" : "rotate(0deg)" }}
+                >
+                  <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </span>
+              </button>
 
-          <p className="mt-8 md:mt-10 text-[12px] md:text-[13px] leading-[1.8] text-foreground/40 font-sans text-center">
-            {s.infoDiet}
-          </p>
-
-          <p className="mt-6 text-[11px] md:text-[12px] leading-[1.8] text-foreground/25 font-sans italic text-center">
-            {s.contextText}
-          </p>
+              <div
+                className="transition-all duration-500 ease-in-out overflow-hidden"
+                style={{
+                  maxHeight: menuOpen ? `${s.menuCourses.length * 120 + 80}px` : "0px",
+                  opacity: menuOpen ? 1 : 0,
+                }}
+              >
+                <div className="px-8 pb-8 border-t border-[#1e3a6e]/10">
+                  <div className="pt-6 flex flex-col gap-5 text-center">
+                    {s.menuCourses.map((course, i) => (
+                      <div key={i}>
+                        <p className="font-serif text-[14px] md:text-[16px]">
+                          {course.name}
+                        </p>
+                        {course.desc && (
+                          <p className="mt-1 font-sans text-[11px] md:text-[12px] text-[#1e3a6e]/40 tracking-wide">
+                            {course.desc}
+                          </p>
+                        )}
+                        {i < s.menuCourses!.length - 1 && (
+                          <div className="mt-5 flex justify-center">
+                            <span className="block w-5 h-px bg-[#1e3a6e]/10" />
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          )}
         </div>
       </section>
 
