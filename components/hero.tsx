@@ -589,7 +589,7 @@ export function Hero({ content }: { content?: SiteContent | null }) {
 
           {/* Right column — menu card */}
           {s.menuCourses && s.menuCourses.length > 0 && (
-            <div className="md:relative md:z-30">
+            <div id="menu" className="md:relative md:z-30 scroll-mt-24">
             <div className="md:absolute md:top-0 md:left-0 md:right-0 bg-[#faf8f3] text-[#1e3a6e] rounded-sm shadow-lg overflow-hidden border border-[#1e3a6e]/5">
               <button
                 onClick={() => setMenuOpen((o) => !o)}
