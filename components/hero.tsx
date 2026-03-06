@@ -368,6 +368,20 @@ export function Hero({ content }: { content?: SiteContent | null }) {
   const sheepAudio = useRef<HTMLAudioElement | null>(null)
   useResourceDebug()
 
+  // Auto-open menu when navigating to #menu
+  useEffect(() => {
+    if (window.location.hash === "#menu") {
+      setMenuOpen(true)
+    }
+    const onHashChange = () => {
+      if (window.location.hash === "#menu") {
+        setMenuOpen(true)
+      }
+    }
+    window.addEventListener("hashchange", onHashChange)
+    return () => window.removeEventListener("hashchange", onHashChange)
+  }, [])
+
   const handleImageClick = (id: string, isSheep?: boolean) => {
     spin(id)
     if (isSheep) {
